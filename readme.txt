@@ -1,10 +1,10 @@
-Popis problému
+ï»¿Popis problÃ©mu
 --------------------------------------------------------
 
-V sloce /app/models jsou entity noobs a guilts, mezi nimi je vztah n:m, èili jeden noob mùe mít více guiltù 
-a naopak. Kadı noob má minimálnì jeden.
+V sloÅ¾ce /app/models jsou entity noobs a guilts, mezi nimi je vztah n:m, Äili jeden noob mÅ¯Å¾e mÃ­t vÃ­ce guiltÅ¯ 
+a naopak. KaÅ¾dÃ½ noob mÃ¡ minimÃ¡lnÄ› jeden.
 
-Data jsem jen dumpnul na dashboard presenteru v default akci, aby bylo vidìt, kde je problém.
+Data jsem jen dumpnul na dashboard presenteru v default akci, aby bylo vidÄ›t, kde je problÃ©m.
 
 	$qb = $this->em->createQueryBuilder();
         $qb->select("n, g");
@@ -13,8 +13,8 @@ Data jsem jen dumpnul na dashboard presenteru v default akci, aby bylo vidìt, kd
         $q = $qb->getQuery();
         Nette\Debug::dump($q->getArrayResult());
 
-Pokud zadám bez limitu, je vše OK a data se vypíší všechny v poøádku.
-Jene kdy zadám tøeba limit 10, tak se mi vrátí jen 9 záznamù - 8 záznamù má v tabulce guilts po jednom záznamu, 1 záznam má 2 záznamy
-Tzn. jakoby to vrází deset, ale jeden tam je jakoby 2x (i kdy není vidìt).
-Vše by bylo v poøádku, kdyby mìl kadı noob jeden guilt. Prostì teï to funguje tak, e pokud má noob 3 záznamy v tabulce
-guilts, bere ho to, jaky by byl 3x... pokud zadám limit 15, vypíše mi to 13 záznamù - 10 co má v tabulce guilts 1 záznam, a 2 co mají v tabulce guilt po dvou záznamech....
+Pokud zadÃ¡m bez limitu, je vÅ¡e OK a data se vypÃ­Å¡Ã­ vÅ¡echny v poÅ™Ã¡dku.
+JenÅ¾e kdyÅ¾ zadÃ¡m tÅ™eba limit 10, tak se mi vrÃ¡tÃ­ jen 9 zÃ¡znamÅ¯ - 8 zÃ¡znamÅ¯ mÃ¡ v tabulce guilts po jednom zÃ¡znamu, 1 zÃ¡znam mÃ¡ 2 zÃ¡znamy
+Tzn. jakoby to vrÃ¡zÃ­ deset, ale jeden tam je jakoby 2x (i kdyÅ¾ nenÃ­ vidÄ›t).
+VÅ¡e by bylo v poÅ™Ã¡dku, kdyby mÄ›l kaÅ¾dÃ½ noob jeden guilt. ProstÄ› teÄ to funguje tak, Å¾e pokud mÃ¡ noob 3 zÃ¡znamy v tabulce
+guilts, bere ho to, jaky by byl 3x... pokud zadÃ¡m limit 15, vypÃ­Å¡e mi to 13 zÃ¡znamÅ¯ - 10 co mÃ¡ v tabulce guilts 1 zÃ¡znam, a 2 co majÃ­ v tabulce guilt po dvou zÃ¡znamech....
