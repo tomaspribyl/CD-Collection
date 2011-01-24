@@ -2,6 +2,7 @@
 namespace NoobDB\Entities;
 /**
  *  @table(name="noobs")
+ *  @Entity
  */
 class Noobs {
 
@@ -13,12 +14,12 @@ class Noobs {
     private $noob_id;
 
     /** 
-     *  @Column(type="string")
+     *  @Column(type="string", length="100")
      */
     private $noob_nick;
 
     /** 
-     *  @Column(type="string")
+     *  @Column(type="string", length="100")
      */
     private $noob_descriptions;
 
@@ -29,12 +30,12 @@ class Noobs {
     private $user;
 
     /**
-     *  @Column(type="string")
+     *  @Column(type="string", length="100")
      */
     private $noob_server;
 
     /** 
-     *  @Column(type="string")
+     *  @Column(type="string", length="100")
      */
     private $noob_map;
 
