@@ -38,9 +38,8 @@ class DashboardPresenter extends BasePresenter
         $qb = $this->em->createQueryBuilder();
         $qb->select("n, g");
         $qb->from("NoobDB\Entities\Noobs", "n");
-        $qb->leftjoin("n.guilts", "g")->setMaxResults(24);
-        $q = $qb->getQuery()
-                ->setHydrationMode(4);
+        $qb->leftjoin("n.guilts", "g")->setMaxResults(10);
+        $q = $qb->getQuery();
         Nette\Debug::dump($q->getArrayResult());
         //$q->useQueryCache(true);
 
